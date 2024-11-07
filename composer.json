@@ -8,8 +8,10 @@
         "php": "^8.2",
         "filament/filament": "^3.2",
         "filament/notifications": "^3.2",
+        "filament/spatie-laravel-translatable-plugin": "^3.2",
         "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "mokhosh/filament-jalali": "^4.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
