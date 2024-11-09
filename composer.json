@@ -11,7 +11,8 @@
         "filament/spatie-laravel-translatable-plugin": "^3.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
-        "mokhosh/filament-jalali": "^4.4"
+        "mokhosh/filament-jalali": "^4.4",
+        "mokhosh/filament-rating": "^1.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
