@@ -3,14 +3,30 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Afsakar\FilamentOtpLogin\Models\Contracts\CanLoginDirectly;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Log;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+
+    public function canLoginDirectly(): bool
+    {
+        // return str($this->email)->endsWith('@example.com');
+        $isExampleEmail = str($this->email)->endsWith('@example.com');
+
+        // Log the result
+        Log::info('Email Check:', [
+            'email' => $this->email,
+            'isExampleEmail' => $isExampleEmail
+        ]);
+
+        return $isExampleEmail;
+    }
 
     /**
      * The attributes that are mass assignable.

@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Afsakar\FilamentOtpLogin\FilamentOtpLoginPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -12,6 +13,7 @@ use Filament\SpatieLaravelTranslatablePlugin;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Filament\Widgets\AccountWidget;
+use Filament\Widgets\StatsOverviewWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -56,9 +58,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])->plugin(
-                SpatieLaravelTranslatablePlugin::make()
-                    ->defaultLocales(['en', 'fa']),
-            );
+            ])->plugins([
+                    SpatieLaravelTranslatablePlugin::make()
+                        ->defaultLocales(['en', 'fa']),
+                    FilamentOtpLoginPlugin::make(),
+                ]);
     }
 }
