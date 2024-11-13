@@ -6,34 +6,58 @@ use App\Filament\Resources\ExpensesResource\Pages;
 use App\Filament\Resources\ExpensesResource\RelationManagers;
 use App\Models\Expenses;
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 
 class ExpensesResource extends Resource
 {
     protected static ?string $model = Expenses::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
+    protected static ?string $navigationLabel = 'مصارف';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('supplier_number')
-                    ->numeric(),
-                Forms\Components\RichEditor::make('details')
-                ,
-                Forms\Components\TextInput::make('date_expense'),
-                Forms\Components\TextInput::make('item_name'),
-                Forms\Components\TextInput::make('amount'),
-                Forms\Components\TextInput::make('unit_price'),
+                Grid::make()->schema([
+                    Forms\Components\Select::make('user_id')
+                        ->relationship('user', 'name')
+                        ->default(Auth::user()->id)
+                        ->label('مصول کس'),
+                    Grid::make()->schema([
+                        Forms\Components\TextInput::make('supplier_number')
+                            ->label('فروشنده')
+                            ->numeric(),
+                        Forms\Components\TextInput::make('date_expense')
+                            ->label('مصرف تاریخ')
+                        ,
+                    ])->columns(2),
+                    Grid::make()->schema([
+                        Forms\Components\TextInput::make('item_name')
+                            ->label('د جنس نوم')
+                        ,
+                        Forms\Components\TextInput::make('amount')
+                            ->label('اندازه')
+                        ,
+                        Forms\Components\TextInput::make('unit_price')
+                            ->label('فی واحد قیمت')
+                        ,
+                    ])->columns(3),
+                    Forms\Components\RichEditor::make('details')
+                        ->label('توضیحات')
+                    ,
+                ])->columns(1)
             ]);
     }
 
