@@ -22,6 +22,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -62,6 +63,7 @@ class AdminPanelProvider extends PanelProvider
                     SpatieLaravelTranslatablePlugin::make()
                         ->defaultLocales(['en', 'fa']),
                     FilamentOtpLoginPlugin::make(),
+                    FilamentSpatieLaravelBackupPlugin::make()
                 ]);
     }
 }

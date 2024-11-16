@@ -15,7 +15,8 @@
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
         "mokhosh/filament-jalali": "^4.4",
-        "mokhosh/filament-rating": "^1.4"
+        "mokhosh/filament-rating": "^1.4",
+        "shuvroroy/filament-spatie-laravel-backup": "^2.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

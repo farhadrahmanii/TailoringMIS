@@ -3566,3 +3566,271 @@ width: 100% !important;
 [stacktrace]
 #0 {main}
 "} 
+[2024-11-16 04:21:30] local.ERROR: The dump process failed with a none successful exitcode.
+Exitcode
+========
+2: Misuse of shell builtins
+
+Output
+======
+<no output>
+
+Error Output
+============
+mysqldump: Got error: 1045: Access denied for user 'root'@'localhost' (using password: NO) when trying to connect
+ {"userId":1,"exception":"[object] (Spatie\\Backup\\Exceptions\\BackupFailed(code: 0): The dump process failed with a none successful exitcode.
+Exitcode
+========
+2: Misuse of shell builtins
+
+Output
+======
+<no output>
+
+Error Output
+============
+mysqldump: Got error: 1045: Access denied for user 'root'@'localhost' (using password: NO) when trying to connect
+
+ at D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Exceptions\\BackupFailed.php:17)
+[stacktrace]
+#0 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Tasks\\Backup\\BackupJob.php(184): Spatie\\Backup\\Exceptions\\BackupFailed::from(Object(Spatie\\DbDumper\\Exceptions\\DumpFailed))
+#1 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Commands\\BackupCommand.php(72): Spatie\\Backup\\Tasks\\Backup\\BackupJob->run()
+#2 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Spatie\\Backup\\Commands\\BackupCommand->handle()
+#3 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#6 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(690): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#7 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(213): Illuminate\\Container\\Container->call(Array)
+#8 D:\\Web\\Herd\\TailoringMIS\\vendor\\symfony\\console\\Command\\Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#9 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#10 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Commands\\BaseCommand.php(29): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#11 D:\\Web\\Herd\\TailoringMIS\\vendor\\symfony\\console\\Application.php(1047): Spatie\\Backup\\Commands\\BaseCommand->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#12 D:\\Web\\Herd\\TailoringMIS\\vendor\\symfony\\console\\Application.php(316): Symfony\\Component\\Console\\Application->doRunCommand(Object(Spatie\\Backup\\Commands\\BackupCommand), Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#13 D:\\Web\\Herd\\TailoringMIS\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#14 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(163): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#15 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(426): Illuminate\\Console\\Application->call('backup:run', Array, NULL)
+#16 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(358): Illuminate\\Foundation\\Console\\Kernel->call('Spatie\\\\Backup\\\\C...', Array)
+#17 D:\\Web\\Herd\\TailoringMIS\\vendor\\shuvroroy\\filament-spatie-laravel-backup\\src\\Jobs\\CreateBackupJob.php(27): Illuminate\\Support\\Facades\\Facade::__callStatic('call', Array)
+#18 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob->handle()
+#19 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#22 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(690): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#23 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(128): Illuminate\\Container\\Container->call(Array)
+#24 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Bus\\Dispatcher->Illuminate\\Bus\\{closure}(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#25 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#26 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(132): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#27 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(124): Illuminate\\Bus\\Dispatcher->dispatchNow(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob), false)
+#28 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Queue\\CallQueuedHandler->Illuminate\\Queue\\{closure}(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#29 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#30 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(123): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#31 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(71): Illuminate\\Queue\\CallQueuedHandler->dispatchThroughMiddleware(Object(Illuminate\\Queue\\Jobs\\SyncJob), Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#32 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\Jobs\\Job.php(102): Illuminate\\Queue\\CallQueuedHandler->call(Object(Illuminate\\Queue\\Jobs\\SyncJob), Array)
+#33 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\SyncQueue.php(76): Illuminate\\Queue\\Jobs\\Job->fire()
+#34 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\SyncQueue.php(56): Illuminate\\Queue\\SyncQueue->executeJob(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob), '', NULL)
+#35 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(254): Illuminate\\Queue\\SyncQueue->push(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#36 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(230): Illuminate\\Bus\\Dispatcher->pushCommandToQueue(Object(Illuminate\\Queue\\SyncQueue), Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#37 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(95): Illuminate\\Bus\\Dispatcher->dispatchToQueue(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#38 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(267): Illuminate\\Bus\\Dispatcher->dispatchSync(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob), NULL)
+#39 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Bus\\Dispatcher->Illuminate\\Bus\\{closure}()
+#40 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#41 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(83): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#42 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#43 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(690): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#44 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1420): Illuminate\\Container\\Container->call(Object(Closure))
+#45 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(218): Illuminate\\Foundation\\Application->terminate()
+#46 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1190): Illuminate\\Foundation\\Http\\Kernel->terminate(Object(Illuminate\\Http\\Request), Object(Illuminate\\Http\\JsonResponse))
+#47 D:\\Web\\Herd\\TailoringMIS\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#48 C:\\Program Files\\Herd\\resources\\app.asar.unpacked\\resources\\valet\\server.php(139): require('D:\\\\Web\\\\Herd\\\\Tai...')
+#49 {main}
+
+[previous exception] [object] (Spatie\\DbDumper\\Exceptions\\DumpFailed(code: 0): The dump process failed with a none successful exitcode.
+Exitcode
+========
+2: Misuse of shell builtins
+
+Output
+======
+<no output>
+
+Error Output
+============
+mysqldump: Got error: 1045: Access denied for user 'root'@'localhost' (using password: NO) when trying to connect
+
+ at D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\db-dumper\\src\\Exceptions\\DumpFailed.php:14)
+[stacktrace]
+#0 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\db-dumper\\src\\DbDumper.php(194): Spatie\\DbDumper\\Exceptions\\DumpFailed::processDidNotEndSuccessfully(Object(Symfony\\Component\\Process\\Process))
+#1 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\db-dumper\\src\\Databases\\MySql.php(170): Spatie\\DbDumper\\DbDumper->checkIfDumpWasSuccessFul(Object(Symfony\\Component\\Process\\Process), 'D:\\\\Web\\\\Herd\\\\Tai...')
+#2 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Tasks\\Backup\\BackupJob.php(293): Spatie\\DbDumper\\Databases\\MySql->dumpToFile('D:\\\\Web\\\\Herd\\\\Tai...')
+#3 [internal function]: Spatie\\Backup\\Tasks\\Backup\\BackupJob->Spatie\\Backup\\Tasks\\Backup\\{closure}(Object(Spatie\\DbDumper\\Databases\\MySql), 'mysql')
+#4 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Arr.php(605): array_map(Object(Closure), Array, Array)
+#5 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(791): Illuminate\\Support\\Arr::map(Array, Object(Closure))
+#6 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Tasks\\Backup\\BackupJob.php(257): Illuminate\\Support\\Collection->map(Object(Closure))
+#7 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Tasks\\Backup\\BackupJob.php(196): Spatie\\Backup\\Tasks\\Backup\\BackupJob->dumpDatabases()
+#8 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Tasks\\Backup\\BackupJob.php(170): Spatie\\Backup\\Tasks\\Backup\\BackupJob->createBackupManifest()
+#9 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Commands\\BackupCommand.php(72): Spatie\\Backup\\Tasks\\Backup\\BackupJob->run()
+#10 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Spatie\\Backup\\Commands\\BackupCommand->handle()
+#11 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#14 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(690): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#15 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(213): Illuminate\\Container\\Container->call(Array)
+#16 D:\\Web\\Herd\\TailoringMIS\\vendor\\symfony\\console\\Command\\Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#17 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#18 D:\\Web\\Herd\\TailoringMIS\\vendor\\spatie\\laravel-backup\\src\\Commands\\BaseCommand.php(29): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#19 D:\\Web\\Herd\\TailoringMIS\\vendor\\symfony\\console\\Application.php(1047): Spatie\\Backup\\Commands\\BaseCommand->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#20 D:\\Web\\Herd\\TailoringMIS\\vendor\\symfony\\console\\Application.php(316): Symfony\\Component\\Console\\Application->doRunCommand(Object(Spatie\\Backup\\Commands\\BackupCommand), Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#21 D:\\Web\\Herd\\TailoringMIS\\vendor\\symfony\\console\\Application.php(167): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#22 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(163): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Symfony\\Component\\Console\\Output\\BufferedOutput))
+#23 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(426): Illuminate\\Console\\Application->call('backup:run', Array, NULL)
+#24 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(358): Illuminate\\Foundation\\Console\\Kernel->call('Spatie\\\\Backup\\\\C...', Array)
+#25 D:\\Web\\Herd\\TailoringMIS\\vendor\\shuvroroy\\filament-spatie-laravel-backup\\src\\Jobs\\CreateBackupJob.php(27): Illuminate\\Support\\Facades\\Facade::__callStatic('call', Array)
+#26 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob->handle()
+#27 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#28 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#29 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#30 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(690): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#31 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(128): Illuminate\\Container\\Container->call(Array)
+#32 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Bus\\Dispatcher->Illuminate\\Bus\\{closure}(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#33 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#34 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(132): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#35 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(124): Illuminate\\Bus\\Dispatcher->dispatchNow(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob), false)
+#36 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Queue\\CallQueuedHandler->Illuminate\\Queue\\{closure}(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#37 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#38 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(123): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#39 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(71): Illuminate\\Queue\\CallQueuedHandler->dispatchThroughMiddleware(Object(Illuminate\\Queue\\Jobs\\SyncJob), Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#40 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\Jobs\\Job.php(102): Illuminate\\Queue\\CallQueuedHandler->call(Object(Illuminate\\Queue\\Jobs\\SyncJob), Array)
+#41 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\SyncQueue.php(76): Illuminate\\Queue\\Jobs\\Job->fire()
+#42 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\SyncQueue.php(56): Illuminate\\Queue\\SyncQueue->executeJob(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob), '', NULL)
+#43 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(254): Illuminate\\Queue\\SyncQueue->push(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#44 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(230): Illuminate\\Bus\\Dispatcher->pushCommandToQueue(Object(Illuminate\\Queue\\SyncQueue), Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#45 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(95): Illuminate\\Bus\\Dispatcher->dispatchToQueue(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob))
+#46 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(267): Illuminate\\Bus\\Dispatcher->dispatchSync(Object(ShuvroRoy\\FilamentSpatieLaravelBackup\\Jobs\\CreateBackupJob), NULL)
+#47 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Bus\\Dispatcher->Illuminate\\Bus\\{closure}()
+#48 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#49 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(83): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#50 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#51 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(690): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#52 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1420): Illuminate\\Container\\Container->call(Object(Closure))
+#53 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(218): Illuminate\\Foundation\\Application->terminate()
+#54 D:\\Web\\Herd\\TailoringMIS\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1190): Illuminate\\Foundation\\Http\\Kernel->terminate(Object(Illuminate\\Http\\Request), Object(Illuminate\\Http\\JsonResponse))
+#55 D:\\Web\\Herd\\TailoringMIS\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#56 C:\\Program Files\\Herd\\resources\\app.asar.unpacked\\resources\\valet\\server.php(139): require('D:\\\\Web\\\\Herd\\\\Tai...')
+#57 {main}
+"} 
+[2024-11-16 04:21:33] local.DEBUG: From: Laravel <hello@example.com>
+To: your@example.com
+Subject: =?utf-8?Q?=D9=BE=D8=B4=D8=AA=DB=8C=D8=A8=D8=A7=D9=86=E2=80=8C?=
+ =?utf-8?Q?=DA=AF=DB=8C=D8=B1=DB=8C?= Laravel (local)
+ =?utf-8?Q?=D8=A8=D8=A7_=D8=AE=D8=B7=D8=A7_=D9=85?=
+ =?utf-8?Q?=D9=88=D8=A7=D8=AC=D9=87_=D8=B4=D8=AF=2E?=
+MIME-Version: 1.0
+Date: Sat, 16 Nov 2024 04:21:33 +0000
+Message-ID: <e99b1982c10b38ef519019afe9537429@example.com>
+Content-Type: multipart/alternative; boundary=_At69dlY
+
+--_At69dlY
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Laravel: http://localhost
+
+# Whoops!
+
+پیغام مهم: هنگام پشتیبان‌گیری از Laravel (local) خطایی رخ داده است.
+
+پیغام خطا: The dump process failed with a none successful exitcode. Exitcode ======== 2: Misuse of shell builtins  Output ====== <no output>  Error Output ============ mysqldump: Got error: 1045: Access denied for user 'root'@'localhost' (using password: NO) when trying to connect
+
+جزییات خطا: #0 D:\Web\Herd\TailoringMIS\vendor\spatie\db-dumper\src\DbDumper.php(194): Spatie\DbDumper\Exceptions\DumpFailed::processDidNotEndSuccessfully(Object(Symfony\Component\Process\Process)) #1 D:\Web\Herd\TailoringMIS\vendor\spatie\db-dumper\src\Databases\MySql.php(170): Spatie\DbDumper\DbDumper->checkIfDumpWasSuccessFul(Object(Symfony\Component\Process\Process), 'D:\\Web\\Herd\\Tai...') #2 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Tasks\Backup\BackupJob.php(293): Spatie\DbDumper\Databases\MySql->dumpToFile('D:\\Web\\Herd\\Tai...') #3 [internal function]: Spatie\Backup\Tasks\Backup\BackupJob->Spatie\Backup\Tasks\Backup\{closure}(Object(Spatie\DbDumper\Databases\MySql), 'mysql') #4 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Collections\Arr.php(605): array_map(Object(Closure), Array, Array) #5 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Collections\Collection.php(791): Illuminate\Support\Arr::map(Array, Object(Closure)) #6 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Tasks\Backup\BackupJob.php(257): Illuminate\Support\Collection->map(Object(Closure)) #7 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Tasks\Backup\BackupJob.php(196): Spatie\Backup\Tasks\Backup\BackupJob->dumpDatabases() #8 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Tasks\Backup\BackupJob.php(170): Spatie\Backup\Tasks\Backup\BackupJob->createBackupManifest() #9 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Commands\BackupCommand.php(72): Spatie\Backup\Tasks\Backup\BackupJob->run() #10 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(36): Spatie\Backup\Commands\BackupCommand->handle() #11 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Util.php(43): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}() #12 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure)) #13 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure)) #14 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Container.php(690): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL) #15 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Console\Command.php(213): Illuminate\Container\Container->call(Array) #16 D:\Web\Herd\TailoringMIS\vendor\symfony\console\Command\Command.php(279): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle)) #17 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Console\Command.php(182): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle)) #18 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Commands\BaseCommand.php(29): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #19 D:\Web\Herd\TailoringMIS\vendor\symfony\console\Application.php(1047): Spatie\Backup\Commands\BaseCommand->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #20 D:\Web\Herd\TailoringMIS\vendor\symfony\console\Application.php(316): Symfony\Component\Console\Application->doRunCommand(Object(Spatie\Backup\Commands\BackupCommand), Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #21 D:\Web\Herd\TailoringMIS\vendor\symfony\console\Application.php(167): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #22 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Console\Application.php(163): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #23 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(426): Illuminate\Console\Application->call('backup:run', Array, NULL) #24 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(358): Illuminate\Foundation\Console\Kernel->call('Spatie\\Backup\\C...', Array) #25 D:\Web\Herd\TailoringMIS\vendor\shuvroroy\filament-spatie-laravel-backup\src\Jobs\CreateBackupJob.php(27): Illuminate\Support\Facades\Facade::__callStatic('call', Array) #26 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(36): ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob->handle() #27 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Util.php(43): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}() #28 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure)) #29 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure)) #30 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Container.php(690): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL) #31 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(128): Illuminate\Container\Container->call(Array) #32 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(144): Illuminate\Bus\Dispatcher->Illuminate\Bus\{closure}(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #33 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(119): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #34 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure)) #35 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\CallQueuedHandler.php(124): Illuminate\Bus\Dispatcher->dispatchNow(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob), false) #36 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(144): Illuminate\Queue\CallQueuedHandler->Illuminate\Queue\{closure}(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #37 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(119): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #38 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\CallQueuedHandler.php(123): Illuminate\Pipeline\Pipeline->then(Object(Closure)) #39 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\CallQueuedHandler.php(71): Illuminate\Queue\CallQueuedHandler->dispatchThroughMiddleware(Object(Illuminate\Queue\Jobs\SyncJob), Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #40 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\Jobs\Job.php(102): Illuminate\Queue\CallQueuedHandler->call(Object(Illuminate\Queue\Jobs\SyncJob), Array) #41 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\SyncQueue.php(76): Illuminate\Queue\Jobs\Job->fire() #42 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\SyncQueue.php(56): Illuminate\Queue\SyncQueue->executeJob(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob), '', NULL) #43 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(254): Illuminate\Queue\SyncQueue->push(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #44 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(230): Illuminate\Bus\Dispatcher->pushCommandToQueue(Object(Illuminate\Queue\SyncQueue), Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #45 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(95): Illuminate\Bus\Dispatcher->dispatchToQueue(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #46 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(267): Illuminate\Bus\Dispatcher->dispatchSync(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob), NULL) #47 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(36): Illuminate\Bus\Dispatcher->Illuminate\Bus\{closure}() #48 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Util.php(43): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}() #49 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(83): Illuminate\Container\Util::unwrapIfClosure(Object(Closure)) #50 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Object(Closure), Object(Closure)) #51 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Container.php(690): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Object(Closure), Array, NULL) #52 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1420): Illuminate\Container\Container->call(Object(Closure)) #53 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(218): Illuminate\Foundation\Application->terminate() #54 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1190): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\JsonResponse)) #55 D:\Web\Herd\TailoringMIS\public\index.php(17): Illuminate\Foundation\Application->handleRequest(Object(Illuminate\Http\Request)) #56 C:\Program Files\Herd\resources\app.asar.unpacked\resources\valet\server.php(139): require('D:\\Web\\Herd\\Tai...') #57 {main}
+
+Regards,
+Laravel
+
+© 2024 Laravel. All rights reserved.
+
+--_At69dlY
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Laravel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<style>
+@media only screen and (max-width: 600px) {
+.inner-body {
+width: 100% !important;
+}
+
+.footer {
+width: 100% !important;
+}
+}
+
+@media only screen and (max-width: 500px) {
+.button {
+width: 100% !important;
+}
+}
+</style>
+</head>
+<body style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; background-color: #ffffff; color: #718096; height: 100%; line-height: 1.4; margin: 0; padding: 0; width: 100% !important;">
+
+<table class="wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #edf2f7; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td class="header" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; padding: 25px 0; text-align: center;">
+<a href="http://localhost" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 19px; font-weight: bold; text-decoration: none; display: inline-block;">
+<img src="https://laravel.com/img/notification-logo.png" class="logo" alt="Laravel Logo" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100%; border: none; height: 75px; max-height: 75px; width: 75px;">
+</a>
+</td>
+</tr>
+
+<!-- Email Body -->
+<tr>
+<td class="body" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #edf2f7; border-bottom: 1px solid #edf2f7; border-top: 1px solid #edf2f7; margin: 0; padding: 0; width: 100%; border: hidden !important;">
+<table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; background-color: #ffffff; border-color: #e8e5ef; border-radius: 2px; border-width: 1px; box-shadow: 0 2px 0 rgba(0, 0, 150, 0.025), 2px 4px 0 rgba(0, 0, 150, 0.015); margin: 0 auto; padding: 0; width: 570px;">
+<!-- Body content -->
+<tr>
+<td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">Whoops!</h1>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">پیغام مهم: هنگام پشتیبان‌گیری از Laravel (local) خطایی رخ داده است.</p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">پیغام خطا: The dump process failed with a none successful exitcode. Exitcode ======== 2: Misuse of shell builtins  Output ====== &lt;no output&gt;  Error Output ============ mysqldump: Got error: 1045: Access denied for user 'root'@'localhost' (using password: NO) when trying to connect</p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">جزییات خطا: #0 D:\Web\Herd\TailoringMIS\vendor\spatie\db-dumper\src\DbDumper.php(194): Spatie\DbDumper\Exceptions\DumpFailed::processDidNotEndSuccessfully(Object(Symfony\Component\Process\Process)) #1 D:\Web\Herd\TailoringMIS\vendor\spatie\db-dumper\src\Databases\MySql.php(170): Spatie\DbDumper\DbDumper-&gt;checkIfDumpWasSuccessFul(Object(Symfony\Component\Process\Process), 'D:\Web\Herd\Tai...') #2 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Tasks\Backup\BackupJob.php(293): Spatie\DbDumper\Databases\MySql-&gt;dumpToFile('D:\Web\Herd\Tai...') #3 [internal function]: Spatie\Backup\Tasks\Backup\BackupJob-&gt;Spatie\Backup\Tasks\Backup{closure}(Object(Spatie\DbDumper\Databases\MySql), 'mysql') #4 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Collections\Arr.php(605): array_map(Object(Closure), Array, Array) #5 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Collections\Collection.php(791): Illuminate\Support\Arr::map(Array, Object(Closure)) #6 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Tasks\Backup\BackupJob.php(257): Illuminate\Support\Collection-&gt;map(Object(Closure)) #7 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Tasks\Backup\BackupJob.php(196): Spatie\Backup\Tasks\Backup\BackupJob-&gt;dumpDatabases() #8 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Tasks\Backup\BackupJob.php(170): Spatie\Backup\Tasks\Backup\BackupJob-&gt;createBackupManifest() #9 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Commands\BackupCommand.php(72): Spatie\Backup\Tasks\Backup\BackupJob-&gt;run() #10 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(36): Spatie\Backup\Commands\BackupCommand-&gt;handle() #11 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Util.php(43): Illuminate\Container\BoundMethod::Illuminate\Container{closure}() #12 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure)) #13 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure)) #14 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Container.php(690): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL) #15 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Console\Command.php(213): Illuminate\Container\Container-&gt;call(Array) #16 D:\Web\Herd\TailoringMIS\vendor\symfony\console\Command\Command.php(279): Illuminate\Console\Command-&gt;execute(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle)) #17 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Console\Command.php(182): Symfony\Component\Console\Command\Command-&gt;run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle)) #18 D:\Web\Herd\TailoringMIS\vendor\spatie\laravel-backup\src\Commands\BaseCommand.php(29): Illuminate\Console\Command-&gt;run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #19 D:\Web\Herd\TailoringMIS\vendor\symfony\console\Application.php(1047): Spatie\Backup\Commands\BaseCommand-&gt;run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #20 D:\Web\Herd\TailoringMIS\vendor\symfony\console\Application.php(316): Symfony\Component\Console\Application-&gt;doRunCommand(Object(Spatie\Backup\Commands\BackupCommand), Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #21 D:\Web\Herd\TailoringMIS\vendor\symfony\console\Application.php(167): Symfony\Component\Console\Application-&gt;doRun(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #22 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Console\Application.php(163): Symfony\Component\Console\Application-&gt;run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\BufferedOutput)) #23 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(426): Illuminate\Console\Application-&gt;call('backup:run', Array, NULL) #24 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(358): Illuminate\Foundation\Console\Kernel-&gt;call('Spatie\Backup\C...', Array) #25 D:\Web\Herd\TailoringMIS\vendor\shuvroroy\filament-spatie-laravel-backup\src\Jobs\CreateBackupJob.php(27): Illuminate\Support\Facades\Facade::__callStatic('call', Array) #26 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(36): ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob-&gt;handle() #27 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Util.php(43): Illuminate\Container\BoundMethod::Illuminate\Container{closure}() #28 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure)) #29 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure)) #30 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Container.php(690): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL) #31 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(128): Illuminate\Container\Container-&gt;call(Array) #32 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(144): Illuminate\Bus\Dispatcher-&gt;Illuminate\Bus{closure}(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #33 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(119): Illuminate\Pipeline\Pipeline-&gt;Illuminate\Pipeline{closure}(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #34 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(132): Illuminate\Pipeline\Pipeline-&gt;then(Object(Closure)) #35 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\CallQueuedHandler.php(124): Illuminate\Bus\Dispatcher-&gt;dispatchNow(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob), false) #36 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(144): Illuminate\Queue\CallQueuedHandler-&gt;Illuminate\Queue{closure}(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #37 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(119): Illuminate\Pipeline\Pipeline-&gt;Illuminate\Pipeline{closure}(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #38 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\CallQueuedHandler.php(123): Illuminate\Pipeline\Pipeline-&gt;then(Object(Closure)) #39 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\CallQueuedHandler.php(71): Illuminate\Queue\CallQueuedHandler-&gt;dispatchThroughMiddleware(Object(Illuminate\Queue\Jobs\SyncJob), Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #40 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\Jobs\Job.php(102): Illuminate\Queue\CallQueuedHandler-&gt;call(Object(Illuminate\Queue\Jobs\SyncJob), Array) #41 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\SyncQueue.php(76): Illuminate\Queue\Jobs\Job-&gt;fire() #42 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Queue\SyncQueue.php(56): Illuminate\Queue\SyncQueue-&gt;executeJob(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob), '', NULL) #43 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(254): Illuminate\Queue\SyncQueue-&gt;push(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #44 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(230): Illuminate\Bus\Dispatcher-&gt;pushCommandToQueue(Object(Illuminate\Queue\SyncQueue), Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #45 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(95): Illuminate\Bus\Dispatcher-&gt;dispatchToQueue(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob)) #46 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(267): Illuminate\Bus\Dispatcher-&gt;dispatchSync(Object(ShuvroRoy\FilamentSpatieLaravelBackup\Jobs\CreateBackupJob), NULL) #47 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(36): Illuminate\Bus\Dispatcher-&gt;Illuminate\Bus{closure}() #48 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Util.php(43): Illuminate\Container\BoundMethod::Illuminate\Container{closure}() #49 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(83): Illuminate\Container\Util::unwrapIfClosure(Object(Closure)) #50 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Object(Closure), Object(Closure)) #51 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Container\Container.php(690): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Object(Closure), Array, NULL) #52 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1420): Illuminate\Container\Container-&gt;call(Object(Closure)) #53 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(218): Illuminate\Foundation\Application-&gt;terminate() #54 D:\Web\Herd\TailoringMIS\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(1190): Illuminate\Foundation\Http\Kernel-&gt;terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\JsonResponse)) #55 D:\Web\Herd\TailoringMIS\public\index.php(17): Illuminate\Foundation\Application-&gt;handleRequest(Object(Illuminate\Http\Request)) #56 C:\Program Files\Herd\resources\app.asar.unpacked\resources\valet\server.php(139): require('D:\Web\Herd\Tai...') #57 {main}</p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Regards,<br>
+Laravel</p>
+
+
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; margin: 0 auto; padding: 0; text-align: center; width: 570px;">
+<tr>
+<td class="content-cell" align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; color: #b0adc5; font-size: 12px; text-align: center;">© 2024 Laravel. All rights reserved.</p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+--_At69dlY--
+  
