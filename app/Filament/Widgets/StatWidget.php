@@ -4,8 +4,10 @@ namespace App\Filament\Widgets;
 
 use App\Models\Customer;
 use App\Models\Expenses;
+use App\Models\Employee;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
+
 
 class StatWidget extends BaseWidget
 {
@@ -23,12 +25,12 @@ class StatWidget extends BaseWidget
                 ->chart([1, 9, 5, 4, 7, 6, 7, 3, 9, 7, 1, 0])
                 ->color('success')
             ,
-            // Stat::make('کارمندان', Employees::count())
-            //     ->description('کارمندان لیست ')
-            //     ->descriptionIcon('heroicon-o-user-circle')
-            //     ->color('danger')
-            //     ->chart([1, 5, 1, 4, 4, 8, 2, 7, 3, 2, 5, 9])
-            // ,
+            Stat::make('کارمندان', Employee::count())
+                ->description('کارمندان لیست ')
+                ->descriptionIcon('heroicon-o-user-circle')
+                ->color('danger')
+                ->chart([1, 5, 1, 4, 4, 8, 2, 7, 3, 2, 5, 9])
+            ,
             // Stat::make('اجناس', CustomerNumeraha::count())
             //     ->description('ټولټال اجناس ')
             //     ->descriptionIcon('heroicon-o-building-office-2')

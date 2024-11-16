@@ -24,6 +24,8 @@ class ExpensesResource extends Resource
     protected static ?string $model = Expenses::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
+    protected static ?string $modelLabel = 'مسارف';
+
     protected static ?string $navigationLabel = 'مصارف';
 
     public static function form(Form $form): Form
@@ -37,8 +39,7 @@ class ExpensesResource extends Resource
                         ->label('مصول کس'),
                     Grid::make()->schema([
                         Forms\Components\TextInput::make('supplier_number')
-                            ->label('فروشنده')
-                            ->numeric(),
+                            ->label('فروشنده'),
                         Forms\Components\TextInput::make('date_expense')
                             ->label('مصرف تاریخ')
                         ,
@@ -47,8 +48,16 @@ class ExpensesResource extends Resource
                         Forms\Components\TextInput::make('item_name')
                             ->label('د جنس نوم')
                         ,
-                        Forms\Components\TextInput::make('amount')
-                            ->label('اندازه')
+                        \LaraZeus\Quantity\Components\Quantity::make('amount')
+                            ->heading('select quantity')
+                            ->default(1)
+                            ->maxValue(1000)
+                            ->minValue(1)
+                            ->stacked()
+
+                            ->label('مقدار')
+                            ->required()
+                            ->helperText('between 1 and 1000')
                         ,
                         Forms\Components\TextInput::make('unit_price')
                             ->label('فی واحد قیمت')
@@ -66,26 +75,33 @@ class ExpensesResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user_id')
-                    ->numeric()
+                    ->label('مصول کس')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('supplier_number')
-                    ->numeric()
+                    ->label('فروشنده')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('details')
+                    ->label('توضیحات')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('date_expense')
+                    ->label('مصرف تاریخ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('item_name')
+                    ->label('د جنس نوم')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('amount')
+                    ->label('مقدار')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('unit_price')
+                    ->label('فی واحد قیمت')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('تاریخ ثبت')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('تاریخ ویرایش')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

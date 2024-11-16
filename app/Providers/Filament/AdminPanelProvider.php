@@ -14,6 +14,8 @@ use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\StatsOverviewWidget;
+use Guava\FilamentKnowledgeBase\KnowledgeBasePlugin;
+use Guava\Tutorials\TutorialsPlugin;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -23,6 +25,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
+use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -63,7 +66,10 @@ class AdminPanelProvider extends PanelProvider
                     SpatieLaravelTranslatablePlugin::make()
                         ->defaultLocales(['en', 'fa']),
                     FilamentOtpLoginPlugin::make(),
-                    FilamentSpatieLaravelBackupPlugin::make()
+                    FilamentSpatieLaravelBackupPlugin::make(),
+                    KnowledgeBasePlugin::make(),
+                    FilamentBackgroundsPlugin::make(),
+                    TutorialsPlugin::make(),
                 ]);
     }
 }

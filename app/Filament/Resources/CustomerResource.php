@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CustomerResource\Pages;
 use App\Filament\Resources\CustomerResource\RelationManagers;
 use App\Models\Customer;
+use AymanAlhattami\FilamentContextMenu\Traits\PageHasContextMenu;
 use Carbon\Carbon;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
@@ -17,16 +18,35 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
+use Guava\Tutorials\Concerns\InteractsWithTutorials;
+use Guava\Tutorials\Contracts\HasTutorials;
+use Guava\Tutorials\Steps\Step;
+use Guava\Tutorials\Tutorial;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use AymanAlhattami\FilamentContextMenu\Traits\PageHasContextMenu;
 
+
+
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Mpdf\Mpdf;
 
 class CustomerResource extends Resource
 {
-    use PageHasContextMenu;
+    use PageHasContextMenu, InteractsWithTutorials;
 
+    public function mount(): void
+    {
+        parent::mount();
+
+        $this->mountTutorial();
+    }
+
+    public function tutorial(Tutorial $tutorial): Tutorial
+    {
+        return $tutorial->steps([
+            Step::make('name'),
+            Step::make('description'),
+        ]);
+    }
     protected static ?string $model = Customer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
@@ -176,7 +196,5 @@ class CustomerResource extends Resource
             'edit' => Pages\EditCustomer::route('/{record}/edit'),
         ];
     }
-    // =============================== Start Context Menu ===========================
 
-    // =============================== End Context Menu ===========================
 }
