@@ -19,10 +19,14 @@ use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use AymanAlhattami\FilamentContextMenu\Traits\PageHasContextMenu;
+
 use Mpdf\Mpdf;
 
 class CustomerResource extends Resource
 {
+    use PageHasContextMenu;
+
     protected static ?string $model = Customer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
@@ -172,4 +176,7 @@ class CustomerResource extends Resource
             'edit' => Pages\EditCustomer::route('/{record}/edit'),
         ];
     }
+    // =============================== Start Context Menu ===========================
+
+    // =============================== End Context Menu ===========================
 }

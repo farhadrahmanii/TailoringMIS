@@ -4,16 +4,16 @@ namespace App\Filament\Resources\ExpensesResource\Pages;
 
 use App\Filament\Resources\ExpensesResource;
 use Filament\Actions;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Resources\Pages\ViewRecord;
 
-class ManageExpenses extends ManageRecords
+class ViewExpenses extends ViewRecord
 {
     protected static string $resource = ExpensesResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\EditAction::make(),
         ];
     }
 }

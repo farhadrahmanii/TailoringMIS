@@ -18,9 +18,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Auth;
-
 class ExpensesResource extends Resource
 {
+
     protected static ?string $model = Expenses::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
@@ -103,12 +103,19 @@ class ExpensesResource extends Resource
                 ]),
             ]);
     }
-
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageExpenses::route('/'),
+            'index' => Pages\ListExpenses::route('/'),
+            'create' => Pages\CreateExpenses::route('/create'),
+            'view' => Pages\ViewExpenses::route('/{record}'),
+            'edit' => Pages\EditExpenses::route('/{record}/edit'),
         ];
     }
-
 }
