@@ -8,7 +8,9 @@ use App\Models\Customer;
 use AymanAlhattami\FilamentContextMenu\Traits\PageHasContextMenu;
 use Carbon\Carbon;
 use Filament\Forms;
+use Filament\Forms\Components\Card;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -17,36 +19,20 @@ use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
+
+
+
 use Filament\Widgets\TableWidget;
-use Guava\Tutorials\Concerns\InteractsWithTutorials;
-use Guava\Tutorials\Contracts\HasTutorials;
-use Guava\Tutorials\Steps\Step;
-use Guava\Tutorials\Tutorial;
 use Illuminate\Database\Eloquent\Builder;
-
-
-
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Mpdf\Mpdf;
 
 class CustomerResource extends Resource
 {
-    use PageHasContextMenu, InteractsWithTutorials;
+    use PageHasContextMenu;
 
-    public function mount(): void
-    {
-        parent::mount();
 
-        $this->mountTutorial();
-    }
 
-    public function tutorial(Tutorial $tutorial): Tutorial
-    {
-        return $tutorial->steps([
-            Step::make('name'),
-            Step::make('description'),
-        ]);
-    }
     protected static ?string $model = Customer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
@@ -61,30 +47,48 @@ class CustomerResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required(),
-                Forms\Components\TextInput::make('clothNumber')
-                    ->numeric()
-                    ->required(),
-                Forms\Components\TextInput::make('phone')
-                    ->tel()
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('amount')
-                    ->numeric()
-                    ->required(),
-                Forms\Components\TextInput::make('price')
-                    ->numeric()
-                    ->required(),
-                Forms\Components\TextInput::make('prepaid')
-                    ->numeric()
-                    ->required(),
-                Forms\Components\TextInput::make('due_price')
-                    ->numeric()
-                    ->required(),
-                Forms\Components\DatePicker::make('delivery_date')
-                    ->jalali()
-                    ->required(),
+                Card::make()->schema([
+                    Forms\Components\TextInput::make('name')
+                        ->label('نام')
+                        ->helpertext('نام مشتری ')
+                        ->required(),
+                    Forms\Components\TextInput::make('clothNumber')
+                        ->numeric()
+                        ->label('د جامو نمبر')
+                        ->helpertext('د جامو یا د کالیو نمبر')
+                        ->required(),
+                    Forms\Components\TextInput::make('phone')
+                        ->tel()
+                        ->helpertext('د مشتری د تلفن شمیره')
+                        ->label('تلفن شماره')
+                        ->required()
+                        ->numeric(),
+                    Forms\Components\TextInput::make('amount')
+                        ->label('اندازه')
+                        ->helpertext('څو جوړه کالی دی؟')
+                        ->numeric()
+                        ->required(),
+                    Forms\Components\TextInput::make('price')
+                        ->label('قیمت')
+                        ->helpertext('قیمت اضافه کړی')
+                        ->numeric()
+                        ->required(),
+                    Forms\Components\TextInput::make('prepaid')
+                        ->label('پیش پرداخت')
+                        ->helpertext('پیش پرداخت پیسی')
+                        ->numeric()
+                        ->required(),
+                    Forms\Components\TextInput::make('due_price')
+                        ->label('باقی پیسی')
+                        ->helpertext('پاتی باقی پیسی مقدار')
+                        ->numeric()
+                        ->required(),
+                    Forms\Components\DatePicker::make('delivery_date')
+                        ->label('د تسلیمی نیټه')
+                        ->jalali()
+                        ->helpertext('په کومه نیټه چی یاد مشتری بیرته په خپلو جامو پسی راځی')
+                        ->required(),
+                ])->columns(4)
             ]);
     }
 
@@ -121,10 +125,11 @@ class CustomerResource extends Resource
                 Filter::make('Near Delivery')
                     // Filter records where `delivery_date` is between the start of the week and the end of tomorrow
                     ->query(function ($query) {
+                        $date = Carbon::now()->addDays(7);
                         $startOfWeek = Carbon::now()->startOfWeek()->startOfDay(); // Start of the current week
-                        $endOfTomorrow = Carbon::tomorrow()->endOfDay();           // End of tomorrow
+                        // End of tomorrow
                         // Filter records where `delivery_date` is between the start of the week and the end of tomorrow
-                        return $query->whereBetween('delivery_date', [$startOfWeek, $endOfTomorrow]);
+                        return $query->whereBetween('delivery_date', [$startOfWeek, $date]);
                     })
                     ->label('هغه مشتریان چی نږدی ورځو کی راځی'), // Set a label for the filter button
             ])

@@ -69,7 +69,6 @@ class AdminPanelProvider extends PanelProvider
                     FilamentSpatieLaravelBackupPlugin::make(),
                     KnowledgeBasePlugin::make(),
                     FilamentBackgroundsPlugin::make(),
-                    TutorialsPlugin::make(),
                 ]);
     }
 }

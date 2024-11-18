@@ -14,7 +14,6 @@
         "filament/notifications": "^3.2",
         "filament/spatie-laravel-translatable-plugin": "^3.2",
         "guava/filament-knowledge-base": "^1.10",
-        "guava/tutorials": "^1.1",
         "lara-zeus/quantity": "^1.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",

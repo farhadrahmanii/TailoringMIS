@@ -10,7 +10,6 @@ export default {
         './resources/**/*.vue',
         './vendor/guava/filament-knowledge-base/src/**/*.php',
         './vendor/guava/filament-knowledge-base/resources/**/*.blade.php',
-        './vendor/guava/tutorials/resources/**/*.php',
     ],
     theme: {
         extend: {
