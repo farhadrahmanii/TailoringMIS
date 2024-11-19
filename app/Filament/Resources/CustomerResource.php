@@ -19,7 +19,7 @@ use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
-
+use Filament\Tables\Columns\Summarizers\Sum;
 
 
 use Filament\Widgets\TableWidget;
@@ -101,24 +101,46 @@ class CustomerResource extends Resource
                 Tables\Columns\TextColumn::make('clothNumber')->searchable()->label('کالیو نمبر '),
                 Tables\Columns\TextColumn::make('phone')->numeric()->sortable()->label('تلفن نمبر'),
                 Tables\Columns\TextColumn::make('amount')->searchable()->label('اندازه '),
-                Tables\Columns\TextColumn::make('price')->searchable()->label('قیمت'),
+                Tables\Columns\TextColumn::make('price')
+                    ->searchable()
+                    ->label('قیمت')
+                    ->badge()
+                ,
                 Tables\Columns\TextColumn::make('prepaid')->searchable()->label('وصول پیسی '),
-                Tables\Columns\TextColumn::make('due_price')->searchable()->label('اخری نیټه'),
+                Tables\Columns\TextColumn::make('due_price')->searchable()->label('اخری نیټه')
+                    ->since()
+                ,
                 Tables\Columns\TextColumn::make('delivery_date')
                     ->dateTime()
-                    ->jalaliDate() // Display in Jalali format
+                    ->since()
                     ->searchable()
                     ->label('د سپارولو نیټه'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->jalaliDate()
                     ->sortable()
+                    ->since()
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->label('د ثبت نیټه'),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->jalaliDate()
                     ->sortable()
+                    ->since()
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->label('د معلوماتو بدلون نیټه'),
+                TextColumn::make('due_price')
+                    ->summarize([
+                        Sum::make()->label('باقی پیسی'),
+                    ]),
+                TextColumn::make('prepaid')
+                    ->summarize([
+                        Sum::make()->label('پیش پرداخت پیسی'),
+
+                    ]),
+                TextColumn::make('price')
+                    ->summarize([
+                        Sum::make()->label('ټولی پیسی')
+                        ,
+                    ])
             ])
 
             ->filters([
@@ -197,8 +219,8 @@ class CustomerResource extends Resource
         return [
             'index' => Pages\ListCustomers::route('/'),
             'create' => Pages\CreateCustomer::route('/create'),
-            'view' => Pages\ViewCustomer::route('/{record}'),
-            'edit' => Pages\EditCustomer::route('/{record}/edit'),
+            // 'view' => Pages\ViewCustomer::route('/{record}'),
+            // 'edit' => Pages\EditCustomer::route('/{record}/edit'),
         ];
     }
 

@@ -130,8 +130,8 @@ class ExpensesResource extends Resource
         return [
             'index' => Pages\ListExpenses::route('/'),
             'create' => Pages\CreateExpenses::route('/create'),
-            'view' => Pages\ViewExpenses::route('/{record}'),
-            'edit' => Pages\EditExpenses::route('/{record}/edit'),
+            // 'view' => Pages\ViewExpenses::route('/{record}'),
+            // 'edit' => Pages\EditExpenses::route('/{record}/edit'),
         ];
     }
 }
